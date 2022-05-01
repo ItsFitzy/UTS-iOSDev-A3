@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */; };
+		AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */; };
+		AAF3E578281E24FE00C58BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E577281E24FE00C58BC8 /* ViewController.swift */; };
+		AAF3E57B281E24FF00C58BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF3E579281E24FF00C58BC8 /* Main.storyboard */; };
+		AAF3E57D281E24FF00C58BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF3E57C281E24FF00C58BC8 /* Assets.xcassets */; };
+		AAF3E580281E24FF00C58BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF3E57E281E24FF00C58BC8 /* LaunchScreen.storyboard */; };
+		AAF3E58B281E24FF00C58BC8 /* DinecraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E58A281E24FF00C58BC8 /* DinecraftTests.swift */; };
+		AAF3E595281E24FF00C58BC8 /* DinecraftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E594281E24FF00C58BC8 /* DinecraftUITests.swift */; };
+		AAF3E597281E24FF00C58BC8 /* DinecraftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E596281E24FF00C58BC8 /* DinecraftUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAF3E587281E24FF00C58BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAF3E568281E24FE00C58BC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAF3E56F281E24FE00C58BC8;
+			remoteInfo = Dinecraft;
+		};
+		AAF3E591281E24FF00C58BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAF3E568281E24FE00C58BC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAF3E56F281E24FE00C58BC8;
+			remoteInfo = Dinecraft;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AAF3E570281E24FE00C58BC8 /* Dinecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AAF3E577281E24FE00C58BC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAF3E57A281E24FF00C58BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAF3E57C281E24FF00C58BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAF3E57F281E24FF00C58BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AAF3E581281E24FF00C58BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF3E586281E24FF00C58BC8 /* DinecraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinecraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF3E58A281E24FF00C58BC8 /* DinecraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinecraftTests.swift; sourceTree = "<group>"; };
+		AAF3E590281E24FF00C58BC8 /* DinecraftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinecraftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF3E594281E24FF00C58BC8 /* DinecraftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinecraftUITests.swift; sourceTree = "<group>"; };
+		AAF3E596281E24FF00C58BC8 /* DinecraftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinecraftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAF3E56D281E24FE00C58BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E583281E24FF00C58BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E58D281E24FF00C58BC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAF3E567281E24FE00C58BC8 = {
+			isa = PBXGroup;
+			children = (
+				AAF3E572281E24FE00C58BC8 /* Dinecraft */,
+				AAF3E589281E24FF00C58BC8 /* DinecraftTests */,
+				AAF3E593281E24FF00C58BC8 /* DinecraftUITests */,
+				AAF3E571281E24FE00C58BC8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAF3E571281E24FE00C58BC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAF3E570281E24FE00C58BC8 /* Dinecraft.app */,
+				AAF3E586281E24FF00C58BC8 /* DinecraftTests.xctest */,
+				AAF3E590281E24FF00C58BC8 /* DinecraftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAF3E572281E24FE00C58BC8 /* Dinecraft */ = {
+			isa = PBXGroup;
+			children = (
+				AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */,
+				AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */,
+				AAF3E577281E24FE00C58BC8 /* ViewController.swift */,
+				AAF3E579281E24FF00C58BC8 /* Main.storyboard */,
+				AAF3E57C281E24FF00C58BC8 /* Assets.xcassets */,
+				AAF3E57E281E24FF00C58BC8 /* LaunchScreen.storyboard */,
+				AAF3E581281E24FF00C58BC8 /* Info.plist */,
+			);
+			path = Dinecraft;
+			sourceTree = "<group>";
+		};
+		AAF3E589281E24FF00C58BC8 /* DinecraftTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAF3E58A281E24FF00C58BC8 /* DinecraftTests.swift */,
+			);
+			path = DinecraftTests;
+			sourceTree = "<group>";
+		};
+		AAF3E593281E24FF00C58BC8 /* DinecraftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AAF3E594281E24FF00C58BC8 /* DinecraftUITests.swift */,
+				AAF3E596281E24FF00C58BC8 /* DinecraftUITestsLaunchTests.swift */,
+			);
+			path = DinecraftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAF3E56F281E24FE00C58BC8 /* Dinecraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF3E59A281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "Dinecraft" */;
+			buildPhases = (
+				AAF3E56C281E24FE00C58BC8 /* Sources */,
+				AAF3E56D281E24FE00C58BC8 /* Frameworks */,
+				AAF3E56E281E24FE00C58BC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dinecraft;
+			productName = Dinecraft;
+			productReference = AAF3E570281E24FE00C58BC8 /* Dinecraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAF3E585281E24FF00C58BC8 /* DinecraftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF3E59D281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "DinecraftTests" */;
+			buildPhases = (
+				AAF3E582281E24FF00C58BC8 /* Sources */,
+				AAF3E583281E24FF00C58BC8 /* Frameworks */,
+				AAF3E584281E24FF00C58BC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAF3E588281E24FF00C58BC8 /* PBXTargetDependency */,
+			);
+			name = DinecraftTests;
+			productName = DinecraftTests;
+			productReference = AAF3E586281E24FF00C58BC8 /* DinecraftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AAF3E58F281E24FF00C58BC8 /* DinecraftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF3E5A0281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "DinecraftUITests" */;
+			buildPhases = (
+				AAF3E58C281E24FF00C58BC8 /* Sources */,
+				AAF3E58D281E24FF00C58BC8 /* Frameworks */,
+				AAF3E58E281E24FF00C58BC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAF3E592281E24FF00C58BC8 /* PBXTargetDependency */,
+			);
+			name = DinecraftUITests;
+			productName = DinecraftUITests;
+			productReference = AAF3E590281E24FF00C58BC8 /* DinecraftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAF3E568281E24FE00C58BC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					AAF3E56F281E24FE00C58BC8 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AAF3E585281E24FF00C58BC8 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = AAF3E56F281E24FE00C58BC8;
+					};
+					AAF3E58F281E24FF00C58BC8 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = AAF3E56F281E24FE00C58BC8;
+					};
+				};
+			};
+			buildConfigurationList = AAF3E56B281E24FE00C58BC8 /* Build configuration list for PBXProject "Dinecraft" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAF3E567281E24FE00C58BC8;
+			productRefGroup = AAF3E571281E24FE00C58BC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAF3E56F281E24FE00C58BC8 /* Dinecraft */,
+				AAF3E585281E24FF00C58BC8 /* DinecraftTests */,
+				AAF3E58F281E24FF00C58BC8 /* DinecraftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAF3E56E281E24FE00C58BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF3E580281E24FF00C58BC8 /* LaunchScreen.storyboard in Resources */,
+				AAF3E57D281E24FF00C58BC8 /* Assets.xcassets in Resources */,
+				AAF3E57B281E24FF00C58BC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E584281E24FF00C58BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E58E281E24FF00C58BC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAF3E56C281E24FE00C58BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF3E578281E24FE00C58BC8 /* ViewController.swift in Sources */,
+				AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */,
+				AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E582281E24FF00C58BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF3E58B281E24FF00C58BC8 /* DinecraftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF3E58C281E24FF00C58BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF3E595281E24FF00C58BC8 /* DinecraftUITests.swift in Sources */,
+				AAF3E597281E24FF00C58BC8 /* DinecraftUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAF3E588281E24FF00C58BC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAF3E56F281E24FE00C58BC8 /* Dinecraft */;
+			targetProxy = AAF3E587281E24FF00C58BC8 /* PBXContainerItemProxy */;
+		};
+		AAF3E592281E24FF00C58BC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAF3E56F281E24FE00C58BC8 /* Dinecraft */;
+			targetProxy = AAF3E591281E24FF00C58BC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAF3E579281E24FF00C58BC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAF3E57A281E24FF00C58BC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAF3E57E281E24FF00C58BC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAF3E57F281E24FF00C58BC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAF3E598281E24FF00C58BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAF3E599281E24FF00C58BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAF3E59B281E24FF00C58BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dinecraft/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.Dinecraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAF3E59C281E24FF00C58BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dinecraft/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.Dinecraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AAF3E59E281E24FF00C58BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.DinecraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dinecraft.app/Dinecraft";
+			};
+			name = Debug;
+		};
+		AAF3E59F281E24FF00C58BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.DinecraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dinecraft.app/Dinecraft";
+			};
+			name = Release;
+		};
+		AAF3E5A1281E24FF00C58BC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.DinecraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dinecraft;
+			};
+			name = Debug;
+		};
+		AAF3E5A2281E24FF00C58BC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.DinecraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dinecraft;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAF3E56B281E24FE00C58BC8 /* Build configuration list for PBXProject "Dinecraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF3E598281E24FF00C58BC8 /* Debug */,
+				AAF3E599281E24FF00C58BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAF3E59A281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "Dinecraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF3E59B281E24FF00C58BC8 /* Debug */,
+				AAF3E59C281E24FF00C58BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAF3E59D281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "DinecraftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF3E59E281E24FF00C58BC8 /* Debug */,
+				AAF3E59F281E24FF00C58BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAF3E5A0281E24FF00C58BC8 /* Build configuration list for PBXNativeTarget "DinecraftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF3E5A1281E24FF00C58BC8 /* Debug */,
+				AAF3E5A2281E24FF00C58BC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAF3E568281E24FE00C58BC8 /* Project object */;
+}
