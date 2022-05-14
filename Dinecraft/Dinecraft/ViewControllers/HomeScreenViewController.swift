@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var StartBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true
+        StartBtn.titleLabel?.font = UIFont(name: "minecraft-font", size: 22)
     }
 
 
