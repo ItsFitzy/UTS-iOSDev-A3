@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6922DC73282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
+		6922DC74282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
+		6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC75282FE6F400E984BD /* MinecraftFont.ttf */; };
+		6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */; };
 		699066A2282F756C00EB6C17 /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */; };
 		AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */; };
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MinecraftFont.ttf; path = Dinecraft/Asset/MinecraftFont.ttf; sourceTree = "<group>"; };
+		6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = df8710509e51babea38d59045b96a6bd.png; sourceTree = "<group>"; };
 		699066A1282F756C00EB6C17 /* Asset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Asset; path = Dinecraft/Asset; sourceTree = SOURCE_ROOT; };
 		AAF3E570281E24FE00C58BC8 /* Dinecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 		AAF3E567281E24FE00C58BC8 = {
 			isa = PBXGroup;
 			children = (
+				6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */,
+				6922DC75282FE6F400E984BD /* MinecraftFont.ttf */,
 				AAF3E572281E24FE00C58BC8 /* Dinecraft */,
 				AAF3E589281E24FF00C58BC8 /* DinecraftTests */,
 				AAF3E593281E24FF00C58BC8 /* DinecraftUITests */,
@@ -246,6 +254,8 @@
 				699066A2282F756C00EB6C17 /* Asset in Resources */,
 				AAF3E57D281E24FF00C58BC8 /* Assets.xcassets in Resources */,
 				AAF3E57B281E24FF00C58BC8 /* Main.storyboard in Resources */,
+				6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */,
+				6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6922DC73282FE67000E984BD /* Asset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6922DC74282FE67000E984BD /* Asset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
