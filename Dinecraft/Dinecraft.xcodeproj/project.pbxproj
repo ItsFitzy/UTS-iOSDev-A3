@@ -12,6 +12,7 @@
 		6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC75282FE6F400E984BD /* MinecraftFont.ttf */; };
 		6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */; };
 		699066A2282F756C00EB6C17 /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
+		AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC51C27283129C900A9CD23 /* SearchKeywords.swift */; };
 		AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */; };
 		AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */; };
 		AAF3E578281E24FE00C58BC8 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E577281E24FE00C58BC8 /* HomeScreenViewController.swift */; };
@@ -44,6 +45,7 @@
 		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MinecraftFont.ttf; path = Dinecraft/Asset/MinecraftFont.ttf; sourceTree = "<group>"; };
 		6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = df8710509e51babea38d59045b96a6bd.png; sourceTree = "<group>"; };
 		699066A1282F756C00EB6C17 /* Asset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Asset; path = Dinecraft/Asset; sourceTree = SOURCE_ROOT; };
+		AAC51C27283129C900A9CD23 /* SearchKeywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywords.swift; sourceTree = "<group>"; };
 		AAF3E570281E24FE00C58BC8 /* Dinecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		AAC51C26283129AD00A9CD23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAC51C27283129C900A9CD23 /* SearchKeywords.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AAF3E567281E24FE00C58BC8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		AAF3E572281E24FE00C58BC8 /* Dinecraft */ = {
 			isa = PBXGroup;
 			children = (
+				AAC51C26283129AD00A9CD23 /* Model */,
 				699066A1282F756C00EB6C17 /* Asset */,
 				6990669E282F64AF00EB6C17 /* ViewControllers */,
 				AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */,
@@ -283,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF3E578281E24FE00C58BC8 /* HomeScreenViewController.swift in Sources */,
+				AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */,
 				AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */,
 				AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */,
 			);
@@ -468,6 +480,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,6 +508,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
