@@ -30,9 +30,10 @@ class Keywords {
       "Citron",
       "Coconut",
       "Date",
-      "Dragon Fruit",
+      "Dragon",
       "Durian",
       "Fig",
+      "Fruit",
       "Ginger",
       "Grape",
       "Currant",
@@ -49,7 +50,6 @@ class Keywords {
       "Loquat",
       "Lucuma",
       "Lychee",
-      "Mamey Sapote",
       "Mango",
       "Mangosteen",
       "Melons",
@@ -62,10 +62,8 @@ class Keywords {
       "Seville",
       "Valencia",
       "Papaya",
-      "Passion Fruit",
       "Peach",
       "Pear",
-      "Asian Pear",
       "Persimmon",
       "Pineapple",
       "Plantain",
@@ -151,7 +149,6 @@ class Keywords {
         "Shallots",
         "Spinach",
         "Squash",
-        "Swiss Chard",
         "Taro",
         "Tomatillo",
         "Tomato",
@@ -160,4 +157,22 @@ class Keywords {
         "Yams",
         "Zucchini"
     ]
+    
+    
+    //Functions
+    func GetRandomFruit() -> String { //Returns a random unwrapped String from the fruits array
+        return fruits.randomElement()!
+    }
+    
+    func GetRandomVegetable() -> String { //Returns a random unwrapped String from the vegetables array
+        return vegetables.randomElement()!
+    }
+    
+    func GetRandomKeyword() -> String { //Returns a random String from either the fruits array or the vegetables array
+        if Bool.random() {
+            return GetRandomFruit()
+        } else {
+            return GetRandomVegetable()
+        }
+    }
 }
