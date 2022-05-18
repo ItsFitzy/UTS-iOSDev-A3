@@ -4,19 +4,13 @@
 //
 //  Created by Ethan Fitzgerald on 15/5/2022.
 //
+//  Classes:
+//      Keywords
 
 import Foundation
 
+//This class stores all the fruit and vegetable keywords for building an API search, and the associated RNG functions for it
 class Keywords {
-    //Properties
-    
-    
-    //Variables
-    
-    
-    //References
-    
-    
     //Data
     let fruits = [
       "Apple",

@@ -11,6 +11,7 @@ class HomeScreenViewController: UIViewController {
 
     @IBOutlet weak var TitleImg: UIImageView!
     @IBOutlet weak var StartBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
