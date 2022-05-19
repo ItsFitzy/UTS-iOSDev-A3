@@ -12,7 +12,7 @@ import Foundation
 //This class stores all the fruit and vegetable keywords for building an API search, and the associated RNG functions for it
 class Keywords {
     //Data
-    let fruits = [
+    public let fruits = [
       "Apple",
       "Apricot",
       "Avocado",
@@ -77,7 +77,7 @@ class Keywords {
       "Tomato",
     ]
     
-    let vegetables = [
+    public let vegetables = [
         "Artichoke",
         "Arugula",
         "Asparagus",
