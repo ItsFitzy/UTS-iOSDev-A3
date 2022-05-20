@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="889.23076923076917" y="134.36018957345971"/>
         </scene>
-        <!--Allergies Check-->
+        <!--AllergyViewController-->
         <scene sceneID="oLZ-te-HBF">
             <objects>
-                <viewController id="1kj-U8-OHc" sceneMemberID="viewController">
+                <viewController title="AllergyViewController" id="1kj-U8-OHc" customClass="AllergyViewController" customModule="Dinecraft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ng9-bp-ZmU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,9 +99,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crustacean-Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzq-ST-cWc">
-                                <rect key="frame" x="31" y="269" width="184" height="39"/>
+                                <rect key="frame" x="43" y="269" width="161" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -211,13 +211,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celery-Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-Xe-A7C">
-                                <rect key="frame" x="43" y="222" width="161" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-fM-fzf">
                                 <rect key="frame" x="269" y="758" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -240,11 +233,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celery-Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-Xe-A7C">
+                                <rect key="frame" x="43" y="218" width="161" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nX3-VN-KHO"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                     </view>
                     <navigationItem key="navigationItem" title="Allergies Check" id="Zxq-zQ-hVm"/>
+                    <connections>
+                        <outletCollection property="LblGrp" destination="1UT-Xe-A7C" collectionClass="NSMutableArray" id="yut-V9-Fj8"/>
+                        <outletCollection property="LblGrp" destination="xzq-ST-cWc" collectionClass="NSMutableArray" id="LcR-IX-HW6"/>
+                        <outletCollection property="LblGrp" destination="oW6-Dl-pwG" collectionClass="NSMutableArray" id="Idd-ds-bJR"/>
+                        <outletCollection property="LblGrp" destination="h3O-KC-hPS" collectionClass="NSMutableArray" id="MdY-an-a3m"/>
+                        <outletCollection property="LblGrp" destination="Z7U-U8-cAk" collectionClass="NSMutableArray" id="6Kw-9Q-mls"/>
+                        <outletCollection property="LblGrp" destination="CEC-nD-RKP" collectionClass="NSMutableArray" id="aGz-ng-TSa"/>
+                        <outletCollection property="LblGrp" destination="npJ-NE-Xbe" collectionClass="NSMutableArray" id="FIO-nf-8g4"/>
+                        <outletCollection property="LblGrp" destination="jN5-bX-3ba" collectionClass="NSMutableArray" id="TgJ-0g-mia"/>
+                        <outletCollection property="LblGrp" destination="njv-4H-CwX" collectionClass="NSMutableArray" id="eHq-5Q-qOw"/>
+                        <outletCollection property="LblGrp" destination="4j0-f6-2Dk" collectionClass="NSMutableArray" id="fAZ-fg-b2n"/>
+                        <outletCollection property="LblGrp" destination="YNG-vO-Wbu" collectionClass="NSMutableArray" id="SkV-MR-bQA"/>
+                        <outletCollection property="LblGrp" destination="MD9-sz-UMY" collectionClass="NSMutableArray" id="EPx-aQ-n5b"/>
+                        <outletCollection property="LblGrp" destination="kHQ-X9-fl3" collectionClass="NSMutableArray" id="law-lJ-A37"/>
+                        <outletCollection property="LblGrp" destination="P9d-Fr-DyT" collectionClass="NSMutableArray" id="8h4-MR-psJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDy-aM-oZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
