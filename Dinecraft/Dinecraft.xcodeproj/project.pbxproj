@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6922DC73282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
-		6922DC74282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC75282FE6F400E984BD /* MinecraftFont.ttf */; };
 		6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */; };
 		692AD3D4283775D7003EED44 /* AllergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692AD3D3283775D7003EED44 /* AllergyViewController.swift */; };
-		699066A2282F756C00EB6C17 /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		AA297DB62834CACB000761DA /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA297DB52834CACB000761DA /* APIController.swift */; };
+		AA4ED6972837B5EA0009B543 /* Cake.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4ED6962837B5EA0009B543 /* Cake.png */; };
 		AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC51C27283129C900A9CD23 /* SearchKeywords.swift */; };
 		AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */; };
 		AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */; };
@@ -44,11 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MinecraftFont.ttf; path = Dinecraft/Asset/MinecraftFont.ttf; sourceTree = "<group>"; };
+		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MinecraftFont.ttf; sourceTree = "<group>"; };
 		6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = df8710509e51babea38d59045b96a6bd.png; sourceTree = "<group>"; };
 		692AD3D3283775D7003EED44 /* AllergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyViewController.swift; sourceTree = "<group>"; };
-		699066A1282F756C00EB6C17 /* Asset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Asset; path = Dinecraft/Asset; sourceTree = SOURCE_ROOT; };
 		AA297DB52834CACB000761DA /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		AA4ED6962837B5EA0009B543 /* Cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cake.png; sourceTree = "<group>"; };
 		AAC51C27283129C900A9CD23 /* SearchKeywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywords.swift; sourceTree = "<group>"; };
 		AAF3E570281E24FE00C58BC8 /* Dinecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +97,16 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		AA4ED6952837B4D70009B543 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6922DC75282FE6F400E984BD /* MinecraftFont.ttf */,
+				6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */,
+				AA4ED6962837B5EA0009B543 /* Cake.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		AAC51C26283129AD00A9CD23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +119,6 @@
 		AAF3E567281E24FE00C58BC8 = {
 			isa = PBXGroup;
 			children = (
-				6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */,
-				6922DC75282FE6F400E984BD /* MinecraftFont.ttf */,
 				AAF3E572281E24FE00C58BC8 /* Dinecraft */,
 				AAF3E589281E24FF00C58BC8 /* DinecraftTests */,
 				AAF3E593281E24FF00C58BC8 /* DinecraftUITests */,
@@ -134,12 +140,12 @@
 			isa = PBXGroup;
 			children = (
 				AAC51C26283129AD00A9CD23 /* Model */,
-				699066A1282F756C00EB6C17 /* Asset */,
 				6990669E282F64AF00EB6C17 /* ViewControllers */,
 				AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */,
 				AAF3E575281E24FE00C58BC8 /* SceneDelegate.swift */,
 				AAF3E579281E24FF00C58BC8 /* Main.storyboard */,
 				AAF3E57C281E24FF00C58BC8 /* Assets.xcassets */,
+				AA4ED6952837B4D70009B543 /* Assets */,
 				AAF3E57E281E24FF00C58BC8 /* LaunchScreen.storyboard */,
 				AAF3E581281E24FF00C58BC8 /* Info.plist */,
 			);
@@ -268,9 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF3E580281E24FF00C58BC8 /* LaunchScreen.storyboard in Resources */,
-				699066A2282F756C00EB6C17 /* Asset in Resources */,
 				AAF3E57D281E24FF00C58BC8 /* Assets.xcassets in Resources */,
 				AAF3E57B281E24FF00C58BC8 /* Main.storyboard in Resources */,
+				AA4ED6972837B5EA0009B543 /* Cake.png in Resources */,
 				6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */,
 				6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */,
 			);
@@ -280,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6922DC73282FE67000E984BD /* Asset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +293,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6922DC74282FE67000E984BD /* Asset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
