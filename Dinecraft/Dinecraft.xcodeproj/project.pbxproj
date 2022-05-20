@@ -12,7 +12,6 @@
 		6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC75282FE6F400E984BD /* MinecraftFont.ttf */; };
 		6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */; };
 		699066A2282F756C00EB6C17 /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
-		69BB8439283611450068A250 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BB8438283611450068A250 /* PickerViewController.swift */; };
 		AA297DB62834CACB000761DA /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA297DB52834CACB000761DA /* APIController.swift */; };
 		AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC51C27283129C900A9CD23 /* SearchKeywords.swift */; };
 		AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3E573281E24FE00C58BC8 /* AppDelegate.swift */; };
@@ -47,7 +46,6 @@
 		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MinecraftFont.ttf; path = Dinecraft/Asset/MinecraftFont.ttf; sourceTree = "<group>"; };
 		6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = df8710509e51babea38d59045b96a6bd.png; sourceTree = "<group>"; };
 		699066A1282F756C00EB6C17 /* Asset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Asset; path = Dinecraft/Asset; sourceTree = SOURCE_ROOT; };
-		69BB8438283611450068A250 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		AA297DB52834CACB000761DA /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		AAC51C27283129C900A9CD23 /* SearchKeywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywords.swift; sourceTree = "<group>"; };
 		AAF3E570281E24FE00C58BC8 /* Dinecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				AAF3E577281E24FE00C58BC8 /* HomeScreenViewController.swift */,
-				69BB8438283611450068A250 /* PickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -299,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BB8439283611450068A250 /* PickerViewController.swift in Sources */,
 				AAF3E578281E24FE00C58BC8 /* HomeScreenViewController.swift in Sources */,
 				AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */,
 				AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */,
