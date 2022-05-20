@@ -42,8 +42,8 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
-                                <buttonConfiguration key="configuration" style="plain" title="START">
-                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <fontDescription key="titleFontDescription" name="Minecraft" family="Minecraft" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="1kj-U8-OHc" kind="show" id="YTo-Gb-FaQ"/>
@@ -64,7 +64,6 @@
                             <constraint firstItem="Rfz-Lx-HNf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H3R-Tq-uVU"/>
                             <constraint firstItem="fCH-7f-KiV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="JsR-Bp-mE6"/>
                             <constraint firstItem="wSY-cl-c70" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ljl-0c-uJa"/>
-                            <constraint firstItem="fCH-7f-KiV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MTj-tg-PCK"/>
                             <constraint firstItem="fCH-7f-KiV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fO9-56-Uyk"/>
                             <constraint firstItem="wSY-cl-c70" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kz5-ME-BhX"/>
                         </constraints>
