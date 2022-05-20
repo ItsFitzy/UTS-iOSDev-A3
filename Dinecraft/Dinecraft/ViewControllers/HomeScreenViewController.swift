@@ -8,10 +8,20 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    //Properties
+    let debugOn = true
 
+    //References
+        //UI references
     @IBOutlet weak var TitleImg: UIImageView!
     @IBOutlet weak var StartBtn: UIButton!
     
+        //Object references
+    let apiController = APIController()
+    
+    
+    //Methods
+        //Engine-called
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,8 +33,14 @@ class HomeScreenViewController: UIViewController {
             self.TitleImg.center.y = 174
         }), completion: nil)
         
+        if debugOn {
+            TestAPI()
+        }
     }
 
-
+    
+    //Debug
+    func TestAPI(){
+        apiController.FillBuffer()
+    }
 }
-

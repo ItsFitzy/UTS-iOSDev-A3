@@ -12,7 +12,7 @@ import Foundation
 //This class stores all the fruit and vegetable keywords for building an API search, and the associated RNG functions for it
 class Keywords {
     //Data
-    public let fruits = [
+    public static let fruits = [
       "Apple",
       "Apricot",
       "Avocado",
@@ -77,7 +77,7 @@ class Keywords {
       "Tomato",
     ]
     
-    public let vegetables = [
+    public static let vegetables = [
         "Artichoke",
         "Arugula",
         "Asparagus",
@@ -154,15 +154,15 @@ class Keywords {
     
     
     //Functions
-    func GetRandomFruit() -> String { //Returns a random unwrapped String from the fruits array
+    static func GetRandomFruit() -> String { //Returns a random unwrapped String from the fruits array
         return fruits.randomElement()!
     }
     
-    func GetRandomVegetable() -> String { //Returns a random unwrapped String from the vegetables array
+    static func GetRandomVegetable() -> String { //Returns a random unwrapped String from the vegetables array
         return vegetables.randomElement()!
     }
     
-    func GetRandomKeyword() -> String { //Returns a random String from either the fruits array or the vegetables array
+    static func GetRandomKeyword() -> String { //Returns a random String from either the fruits array or the vegetables array
         if Bool.random() {
             return GetRandomFruit()
         } else {

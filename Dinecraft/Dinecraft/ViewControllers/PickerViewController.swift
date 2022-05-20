@@ -16,8 +16,8 @@ class PickerViewController: UIViewController {
         
         FruitPicker.delegate = self
         FruitPicker.dataSource = self
-        let keywords: Keywords = Keywords()
-        fruitdata = keywords.fruits
+//        let keywords: Keywords = Keywords()
+        fruitdata = Keywords.fruits
     }
 }
 
