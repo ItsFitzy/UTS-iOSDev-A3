@@ -32,15 +32,5 @@ class HomeScreenViewController: UIViewController {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: [], animations: ({
             self.TitleImg.center.y = 174
         }), completion: nil)
-        
-        if debugOn {
-            TestAPI()
-        }
-    }
-
-    
-    //Debug
-    func TestAPI(){
-        apiController.FillBuffer()
     }
 }
