@@ -46,8 +46,8 @@ struct RecipeData: Codable {
     //let ingredients: [Ingredient] = []
     //let totalNutrients: NutrientInfo
     //let totalDaily: NutrientInfo
-    //let dietLabels: [DietHealthLabel] = []
-    //let healthLabels: [DietHealthLabel] = []
+    //let dietLabels: [DietLabel] = []
+    //let healthLabels: [HealthLabel] = []
 }
 
 //struct Ingredient: Codable {
@@ -79,8 +79,54 @@ class APIController {
     let appID = "595649de"
     let appKey = "9d8f0ce9cfd505bf884f5f7c0d779387"
     
+    
     //Variables
     var recipeBuffer: [RecipeData] = []
+    
+    
+    //Data
+    let allergies = [
+        "alcohol-free", //Free alcohol? ;)
+        "immuno-supportive",
+        "celery-free",
+        "crustacean-free",
+        "dairy-free",
+        "egg-free",
+        "fish-free",
+        "fodmap-free",
+        "gluten-free",
+        "keto-friendly",
+        "kidney-friendly",
+        "kosher",
+        "low-potassium",
+        "lupine-free",
+        "mustard-free",
+        "low-fat-abs",
+        "no-oil-added",
+        "low-sugar",
+        "paleo",
+        "peanut-free",
+        "pescatarian",
+        "pork-free",
+        "red-meat-free",
+        "sesame-free",
+        "shellfish-free",
+        "soy-free",
+        "sugar-conscious",
+        "tree-nut-free",
+        "vegan",
+        "vegetarian",
+        "wheat-free"
+    ]
+    
+    let diets = [
+        "balanced",
+        "high-fibre",
+        "high-protein",
+        "low-carb",
+        "low-fat",
+        "low-sodium"
+    ]
     
     
     //Methods
@@ -89,6 +135,10 @@ class APIController {
     }
     
     func FillBuffer(keyword: String){
+        
+    }
+    
+    func FillBuffer(keyword: String, allergies: [String], diets: [String]){
         let url = entryURL +  "?q=" + keyword + "&app_id=" + appID + "&app_key=" + appKey
         
         if debugOn {
