@@ -4,6 +4,8 @@
 //  Created by Ethan Fitzgerald on 18/5/2022,
 //  using adapted code from http://bit.ly/3LsAhee
 //
+//  implementing the Edamam API, using the documention from https://developer.edamam.com/edamam-docs-recipe-api-v1
+//
 //  NOTE: most of the properties of the structs are commented out because we simply don't need them. If we need them in the future, just un-ccomment the lines and it *should* work
 //
 //  Classes:
@@ -20,6 +22,7 @@
 //  ========================================================================
 
 import Foundation
+import UIKit
 
 //Structs for representing the JSON data received from the API
 struct Response: Codable {
@@ -85,7 +88,7 @@ class APIController {
     
     
     //Data
-    let allergies = [
+    let allergiesLibrary = [
         "alcohol-free", //Free alcohol? ;)
         "immuno-supportive",
         "celery-free",
@@ -119,7 +122,7 @@ class APIController {
         "wheat-free"
     ]
     
-    let diets = [
+    let dietsLibrary = [
         "balanced",
         "high-fibre",
         "high-protein",
@@ -135,11 +138,23 @@ class APIController {
     }
     
     func FillBuffer(keyword: String){
-        
+        FillBuffer(keyword: keyword, allergies: [], diets: [])
     }
     
     func FillBuffer(keyword: String, allergies: [String], diets: [String]){
-        let url = entryURL +  "?q=" + keyword + "&app_id=" + appID + "&app_key=" + appKey
+        var url = entryURL +  "?q=" + keyword + "&app_id=" + appID + "&app_key=" + appKey
+        
+        for i in 0..<allergies.count { //for each of the allergies passed in
+            if allergiesLibrary.contains(allergies[i]) { //if the input allergy is valid...
+                url += "&health=" + allergies[i] //...add it as a query parameter
+            }
+        }
+        
+        for i in 0..<diets.count { //deja-vu for the diets parameter
+            if dietsLibrary.contains(diets[i]) {
+                url += "&diet=" + diets[i]
+            }
+        }
         
         if debugOn {
             print("URL String: ", url)
@@ -186,5 +201,9 @@ class APIController {
             
             urlSession.resume()
         }
+    }
+    
+    func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 }
