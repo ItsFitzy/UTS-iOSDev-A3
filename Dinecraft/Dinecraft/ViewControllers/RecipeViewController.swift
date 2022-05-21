@@ -11,6 +11,8 @@ import UIKit
 
 class RecipeViewController: UIViewController {
     //Properties
+    var allergiesData: [Bool] = []
+    var dietsData: [Bool] = []
     let debugOn = true
     let deltaTime = 0.2 //time in seconds between the update method being called
     let recipeBufferMinimum = 5 //minimum length of the recipe buffer before more recipes are added

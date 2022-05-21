@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69154D202838C02700F6F8CB /* DietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69154D1F2838C02700F6F8CB /* DietViewController.swift */; };
 		6922DC73282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		6922DC74282FE67000E984BD /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		6922DC76282FE6F400E984BD /* MinecraftFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC75282FE6F400E984BD /* MinecraftFont.ttf */; };
 		6922DC78282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */; };
-		692AD3D4283775D7003EED44 /* AllergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692AD3D3283775D7003EED44 /* AllergyViewController.swift */; };
-		6952A86A2837BE8F008FB980 /* DietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952A8692837BE8F008FB980 /* DietViewController.swift */; };
+		6952A86A2837BE8F008FB980 /* AllergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952A8692837BE8F008FB980 /* AllergyViewController.swift */; };
 		699066A2282F756C00EB6C17 /* Asset in Resources */ = {isa = PBXBuildFile; fileRef = 699066A1282F756C00EB6C17 /* Asset */; };
 		AA297DB62834CACB000761DA /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA297DB52834CACB000761DA /* APIController.swift */; };
 		AA953445283885460045995F /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA953444283885460045995F /* RecipeViewController.swift */; };
@@ -46,10 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69154D1F2838C02700F6F8CB /* DietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewController.swift; sourceTree = "<group>"; };
 		6922DC75282FE6F400E984BD /* MinecraftFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MinecraftFont.ttf; path = Dinecraft/Asset/MinecraftFont.ttf; sourceTree = "<group>"; };
 		6922DC77282FE6FB00E984BD /* df8710509e51babea38d59045b96a6bd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = df8710509e51babea38d59045b96a6bd.png; sourceTree = "<group>"; };
-		692AD3D3283775D7003EED44 /* AllergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyViewController.swift; sourceTree = "<group>"; };
-		6952A8692837BE8F008FB980 /* DietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewController.swift; sourceTree = "<group>"; };
+		6952A8692837BE8F008FB980 /* AllergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyViewController.swift; sourceTree = "<group>"; };
 		699066A1282F756C00EB6C17 /* Asset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Asset; path = Dinecraft/Asset; sourceTree = SOURCE_ROOT; };
 		AA297DB52834CACB000761DA /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		AA953444283885460045995F /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -98,9 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				AAF3E577281E24FE00C58BC8 /* HomeScreenViewController.swift */,
-				692AD3D3283775D7003EED44 /* AllergyViewController.swift */,
-				6952A8692837BE8F008FB980 /* DietViewController.swift */,
+				6952A8692837BE8F008FB980 /* AllergyViewController.swift */,
 				AA953444283885460045995F /* RecipeViewController.swift */,
+				69154D1F2838C02700F6F8CB /* DietViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -305,10 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69154D202838C02700F6F8CB /* DietViewController.swift in Sources */,
 				AAF3E578281E24FE00C58BC8 /* HomeScreenViewController.swift in Sources */,
-				692AD3D4283775D7003EED44 /* AllergyViewController.swift in Sources */,
 				AAC51C28283129C900A9CD23 /* SearchKeywords.swift in Sources */,
-				6952A86A2837BE8F008FB980 /* DietViewController.swift in Sources */,
+				6952A86A2837BE8F008FB980 /* AllergyViewController.swift in Sources */,
 				AA953445283885460045995F /* RecipeViewController.swift in Sources */,
 				AAF3E574281E24FE00C58BC8 /* AppDelegate.swift in Sources */,
 				AAF3E576281E24FE00C58BC8 /* SceneDelegate.swift in Sources */,
