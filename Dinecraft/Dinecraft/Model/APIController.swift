@@ -4,6 +4,9 @@
 //  Created by Ethan Fitzgerald on 18/5/2022,
 //  using adapted code from http://bit.ly/3LsAhee
 //
+//  Extended by Christa Zhang
+//  using code adapted from http://bit.ly/385XBAV
+//
 //  implementing the Edamam API, using the documention from https://developer.edamam.com/edamam-docs-recipe-api-v1
 //
 //  NOTE: most of the properties of the structs are commented out because we simply don't need them. If we need them in the future, just un-ccomment the lines and it *should* work
@@ -85,6 +88,11 @@ class APIController {
     
     //Variables
     var recipeBuffer: [RecipeData] = []
+    var images: [UIImage] = []
+    
+    
+    //References
+    var viewController: RecipeViewController?
     
     
     //Data
@@ -183,6 +191,11 @@ class APIController {
             for i in 0..<decodedData.hits.count {
                 recipeBuffer.append(decodedData.hits[i].recipe) //yes, I know you can append a whole array to another one, but this is neater for use in other places
             }
+            
+            let imageURLs = GetImageURLs()
+            for i in 0..<imageURLs.count {
+                DownloadImage(from: imageURLs[i])
+            }
         } catch {
             print("APIController.Parse(): JSON decode error")
         }
@@ -203,7 +216,28 @@ class APIController {
         }
     }
     
+    func GetImageURLs() -> [URL] {
+        var output: [URL] = []
+        for i in 0..<recipeBuffer.count {
+            output.append(recipeBuffer[i].image)
+        }
+        return output
+    }
+    
     func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func DownloadImage(from url: URL) {
+        print("Download Started: ", url)
+        GetImageData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished: ", url)
+            // always update the UI from the main thread
+            DispatchQueue.main.async() { [weak self] in
+                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
+            }
+        }
     }
 }

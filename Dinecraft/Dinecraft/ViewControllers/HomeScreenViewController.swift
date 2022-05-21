@@ -16,9 +16,6 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var TitleImg: UIImageView!
     @IBOutlet weak var StartBtn: UIButton!
     
-        //Object references
-    let apiController = APIController()
-    
     
     //Methods
         //Engine-called

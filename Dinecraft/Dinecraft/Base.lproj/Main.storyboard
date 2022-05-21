@@ -555,6 +555,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Next"/>
+                                                <connections>
+                                                    <segue destination="muw-H9-yBi" kind="show" id="aku-04-sjb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -621,21 +624,38 @@
             </objects>
             <point key="canvasLocation" x="2473.913043478261" y="123.88392857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading...-->
         <scene sceneID="aWY-ky-r8h">
             <objects>
-                <viewController id="muw-H9-yBi" sceneMemberID="viewController">
+                <viewController id="muw-H9-yBi" customClass="RecipeViewController" customModule="Dinecraft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JM5-eY-Zat">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGY-1t-wED">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pGY-1t-wED" secondAttribute="height" multiplier="1:1" id="Ol0-tR-e2u"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="go9-ug-61M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pGY-1t-wED" firstAttribute="trailing" secondItem="go9-ug-61M" secondAttribute="trailing" id="9tg-bg-x7n"/>
+                            <constraint firstItem="pGY-1t-wED" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" id="SoT-Q6-Rd3"/>
+                            <constraint firstItem="pGY-1t-wED" firstAttribute="centerX" secondItem="JM5-eY-Zat" secondAttribute="centerX" id="jIs-JU-6dn"/>
+                            <constraint firstItem="pGY-1t-wED" firstAttribute="top" secondItem="go9-ug-61M" secondAttribute="top" id="pgx-T5-S07"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="z8U-DJ-Sxc"/>
+                    <navigationItem key="navigationItem" title="Loading..." id="z8U-DJ-Sxc"/>
+                    <connections>
+                        <outlet property="recipeImage" destination="pGY-1t-wED" id="9pW-f2-uOg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ5-4s-K2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="134"/>
+            <point key="canvasLocation" x="3215.9420289855075" y="133.92857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85b-hm-ho7">
