@@ -7,28 +7,30 @@
 //
 //  Extended by Ethan Fitzgerald on 22/5/2022
 //
+//  Classes:
+//      RecipeViewController - ViewController for the Recipe Scene
+//
 //  ========================================================================
 
 import UIKit
 
 class RecipeViewController: UIViewController {
     //Properties
-    let debugOn = true
+    let debugOn = true //toggles on/off some general debug messages
     let deltaTime: Float = 0.2 //time in seconds between the update method being called
-    var initialLoadingTime: Float = 2
+    var initialLoadingTime: Float = 2 //time given from the moment the scene loads to when the first recipe is displayed
     
     
     //Variables
-    var allergiesData: [Bool] = []
-    var dietsData: [Bool] = []
+    var allergiesData: [Bool] = [] //passed from the Allergies screen, stores the User's allergy selections
+    var dietsData: [Bool] = [] //passed from the Diets screen, stores the User's diet selections
     
-    var currentRecipeURL: URL?
+    var currentRecipeURL: URL? //used to store the currentRecipe's URL (easier to make this optional than another variable)
     
-    var initialRecipeShown = false
-    var fillBufferQueued = true
-    var buffering = false
+    var initialRecipeShown = false //flag for if the first recipe's been shown or not
+    var buffering = false //flag for if recipes are currently being loaded 
     
-    var timeSinceLoad: Float = 0
+    var timeSinceLoad: Float = 0 //keeps track of how much time has passed since recipes were loaded, used to recover if we have a combination that produces 0 results
     
     var bufferCountLastUpdate = 0
     var initialLoadQuota = -1
@@ -48,7 +50,7 @@ class RecipeViewController: UIViewController {
     
     //Methods
         //Engine-called
-    override func viewDidLoad() {
+    override func viewDidLoad() { //Called when the scene loads
         super.viewDidLoad()
 
         apiController.viewController = self
@@ -58,24 +60,24 @@ class RecipeViewController: UIViewController {
     }
     
         //UI-called
-    @IBAction func OnNextButton(_ sender: Any) {
+    @IBAction func OnNextButton(_ sender: Any) { //Called when the 'Ew! Next!' button is tapped
         ShowNextRecipe()
     }
     
-    @IBAction func OnMoreButton(_ sender: Any) {
-        UIApplication.shared.open(currentRecipeURL!)
+    @IBAction func OnMoreButton(_ sender: Any) { //Called when the 'Tell me more!' button is tapped
+        UIApplication.shared.open(currentRecipeURL!) //open the current recipe's URL in Safari
     }
     
         //Update methods (called every deltaTime seconds)
-    @objc func Update(){
+    @objc func Update(){ //Called by the timer in viewDidLoad() every deltaTime seconds
         timeSinceLoad += deltaTime
         initialLoadingTime -= deltaTime
+        
         CheckForFirstLoad()
-        CheckBufferThreshold()
         CheckBufferCount()
     }
     
-    func CheckForFirstLoad(){
+    func CheckForFirstLoad(){ //Checks for when the first recipe's prerequisites have loaded, then calls the relevant functions
         if initialRecipeShown { return }
 
         if apiController.images.count >= 1 {
@@ -85,28 +87,18 @@ class RecipeViewController: UIViewController {
         }
     }
     
-    func CheckBufferThreshold(){
-        if apiController.images.count < apiController.recipeBufferThreshold && initialRecipeShown && initialLoadingTime < 0{
-//            LoadRecipes()
-        }
-    }
-    
-    func CheckBufferCount(){
-        if apiController.images.count == bufferCountLastUpdate {
+    func CheckBufferCount(){ //By checking the length of the recipeBuffer every 'frame', check if our current search combination gave us 0 results and load more
+        if apiController.recipeBuffer.count == bufferCountLastUpdate {
             if timeSinceLoad >= 5 && initialRecipeShown == false && apiController.recipeBuffer.count == 0 { //if we've picked a combination that doesn't give any results,
                 buffering = false
                 LoadRecipes()
             }
-        } else if apiController.images.count > bufferCountLastUpdate {
-//            buffering = false //we know our buffering period is done when the length of the buffer increases
-        } else {
-            //if we need to do something when the recipe buffer has decreased in length
         }
-        bufferCountLastUpdate = apiController.images.count
+        bufferCountLastUpdate = apiController.recipeBuffer.count
     }
     
         //Misc.
-    func LoadRecipes(){
+    func LoadRecipes(){ //Handles the calls to fill the recipe buffer
         if buffering == false {
             apiController.FillBuffer(allergies: GetAllergiesArray(), diets: GetDietsArray())
             buffering = true
@@ -114,15 +106,13 @@ class RecipeViewController: UIViewController {
         }
     }
     
-    func OnFirstRecipe() {
-        if debugOn {
-            print("RecipeViewController.OnFirstRecipe(): Hello!")
-        }
+    func OnFirstRecipe() { //Called when the first recipe is fully loaded (Recipe info + image)
+        if debugOn { print("RecipeViewController.OnFirstRecipe(): Hello!") }
         
         self.navigationItem.title = ""
     }
     
-    func ShowNextRecipe() {
+    func ShowNextRecipe() { //Update the UI with the latest recipe, then load more
         if apiController.recipeBuffer.count > 0 && apiController.images.count > 0 {
             let currentRecipe = apiController.recipeBuffer.removeFirst()
             currentRecipeURL = currentRecipe.url
@@ -140,7 +130,7 @@ class RecipeViewController: UIViewController {
     
     
     //Functions
-    func GetAllergiesArray() -> [String] {
+    func GetAllergiesArray() -> [String] { //Converts the Allergies switches from a bool-array to a String array that can be used in the API URLs
         var output: [String] = []
         for i in 0..<allergiesData.count {
             if allergiesData[i] == true {
@@ -150,7 +140,7 @@ class RecipeViewController: UIViewController {
         return output
     }
     
-    func GetDietsArray() -> [String] {
+    func GetDietsArray() -> [String] { //Converts the Diets switches from a bool-array to a String array that can be used in the API URLs
         var output: [String] = []
         for i in 0..<dietsData.count {
             if dietsData[i] == true {

@@ -4,10 +4,10 @@
 //  Created by Ethan Fitzgerald on 18/5/2022,
 //  using adapted code from http://bit.ly/3LsAhee
 //
-//  Extended by Christa Zhang
+//  Extended by Christa Zhang on 21/5/2022,
 //  using code adapted from http://bit.ly/385XBAV
 //
-//  implementing the Edamam API, using the documention from https://developer.edamam.com/edamam-docs-recipe-api-v1
+//  Implementing the Edamam API, using the documention from https://developer.edamam.com/edamam-docs-recipe-api-v1
 //
 //  NOTE: most of the properties of the structs are commented out because we simply don't need them. If we need them in the future, just un-ccomment the lines and it *should* work
 //
@@ -16,11 +16,12 @@
 //
 //  Structs:
 //      Response - top-level JSON response
-//      Recipe - wrapper for the objects in the hits[] array
-//      RecipeData - holder for all the recipe's data
-//      Ingredient - custom type to hold the info about a recipe's ingredient
-//      Measure - the units an Ingredient is measured in
-//      Food - holder for the name of a food and its unique identifier
+//      [Unused] Recipe - wrapper for the objects in the hits[] array
+//      [Unused] RecipeData - holder for all the recipe's data
+//      [Unused] Ingredient - custom type to hold the info about a recipe's ingredient
+//      [Unused] Measure - the units an Ingredient is measured in
+//      [Unused] Food - holder for the name of a food and its unique identifier
+//      ImageURLPair - struct for pairing downloaded UIImages with their URLs (a dictionary didn't work very well)
 //
 //  ========================================================================
 
@@ -84,28 +85,26 @@ struct ImageURLPair {
 //Class
 class APIController {
     //Properties
-    let debugOn = true
+    let debugOn = true //toggles on/off some general debug messages
     
     let recipeBufferThreshold = 4 //minimum length of the recipe buffer before more recipes are added
     
-    let entryURL = "https://api.edamam.com/search"
-    let appID = "595649de"
-    let appKey = "9d8f0ce9cfd505bf884f5f7c0d779387"
+    let entryURL = "https://api.edamam.com/search" //entry-point for the Edamam API
+    let appID = "595649de" //appID required for the API
+    let appKey = "9d8f0ce9cfd505bf884f5f7c0d779387" //appKey required for the API
     
     
     //Variables
-    var recipeBuffer: [RecipeData] = []
-    var images: [ImageURLPair] = []
-    
-    var imageDownloadCounter = 0
+    var recipeBuffer: [RecipeData] = [] //queue-like data structure for storing the displayed recipes
+    var images: [ImageURLPair] = [] //dictionary-like data structure for storing the recipes' images associated with their URLs (to identify them)
     
     
     //References
-    var viewController: RecipeViewController?
+    var viewController: RecipeViewController? //reference to the Recipe ViewController
     
     
     //Data
-    let allergiesLibrary = [
+    let allergiesLibrary = [ //All the allergy search options supported by Edamam
         "alcohol-free", //Free alcohol? ;)
         "immuno-supportive",
         "celery-free",
@@ -139,7 +138,7 @@ class APIController {
         "wheat-free"
     ]
     
-    let dietsLibrary = [
+    let dietsLibrary = [ //All the diet search options supported by Edamam
         "balanced",
         "high-fibre",
         "high-protein",
@@ -150,7 +149,7 @@ class APIController {
     
     
     //Methods
-        //FillBuffer() overflows
+        //FillBuffer() overflow methods
     func FillBuffer(){
         FillBuffer(keyword: Keywords.GetRandomKeyword())
     }
@@ -163,7 +162,7 @@ class APIController {
         FillBuffer(keyword: Keywords.GetRandomKeyword(), allergies: allergies, diets: diets)     
     }
     
-    func FillBuffer(keyword: String, allergies: [String], diets: [String]){        
+    func FillBuffer(keyword: String, allergies: [String], diets: [String]){ //Constructs the API URL based on the given parameters, then pass the returned JSON into Parse()
         var url = entryURL +  "?q=" + keyword + "&app_id=" + appID + "&app_key=" + appKey
         
         for i in 0..<allergies.count { //for each of the allergies passed in
@@ -178,9 +177,7 @@ class APIController {
             }
         }
         
-        if debugOn {
-            print("URL String: ", url)
-        }
+        if debugOn { print("URL String: ", url) }
 
         self.LoadJson(fromURLString: url) { (result) in
             switch result {
@@ -193,14 +190,14 @@ class APIController {
     }
     
         //Misc.
-    func PushToImages(image: UIImage, url: URL){
+    func PushToImages(image: UIImage, url: URL){ //Makes an ImageURLPair from the given parameters and appends it to the images array/dictionary thing
         images.append(ImageURLPair(image: image, url: url))
     }
     
     
     //Functions
         //API/API Helpers
-    func Parse(jsonData: Data) {
+    func Parse(jsonData: Data) { //Attempts to parse the given JSON into a Response struct. If it does, pushes the first few to the recipeBuffer and starts their images downloading
         do {
             let decodedData = try JSONDecoder().decode(Response.self, from: jsonData)
             
@@ -213,11 +210,11 @@ class APIController {
                 DownloadImage(from: imageURLs[i])
             }
         } catch {
-            print("APIController.Parse(): JSON decode error")
+            print("APIController.Parse(): JSON decode error!")
         }
     }
     
-    func LoadJson(fromURLString urlString: String, completion: @escaping (Result<Data, Error>) -> Void) {
+    func LoadJson(fromURLString urlString: String, completion: @escaping (Result<Data, Error>) -> Void) { //Imma be real idk how this works I copied this, pretty sure it uses Swift's built-in URLSession system, stores the returned data and then passes back the result and data
         if let url = URL(string: urlString) {
             let urlSession = URLSession(configuration: .default).dataTask(with: url) { (data, response, error) in
                 if let error = error {
@@ -232,30 +229,17 @@ class APIController {
         }
     }
     
-    func GetImageURLs() -> [URL] {
-        var output: [URL] = []
-        for i in 0..<recipeBuffer.count {
-            output.append(recipeBuffer[i].image)
-        }
-        return output
-    }
-    
-    func DownloadImage(from url: URL) {
-        if debugOn {
-            print("Download Started: ", url)
-        }
+    func DownloadImage(from url: URL) { //Used in conjunction with GetImageData() to download images from the given URL, then push them to the images array
+        if debugOn { print("Download Started: ", url) }
         
         GetImageData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             
-            if self.debugOn {
-                print("Download Finished: ", url)
-            }
+            if self.debugOn { print("Download Finished: ", url) }
             
             // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
-//                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
                 self?.PushToImages(image: UIImage(data: data) ?? UIImage(named: "Cake.png")!, url: url)
             }
         }
@@ -266,12 +250,20 @@ class APIController {
     }
     
         //Misc
-    func PopImage(url: URL) -> UIImage{
+    func GetImageURLs() -> [URL] { //Returns an array of all the image URLs in the recipeBuffer
+        var output: [URL] = []
+        for i in 0..<recipeBuffer.count {
+            output.append(recipeBuffer[i].image)
+        }
+        return output
+    }
+    
+    func PopImage(url: URL) -> UIImage { //Returns the image downloaded from the given URL
         for i in 0..<images.count {
             if images[i].url == url {
                 return images.remove(at: i).image
             }
         }
-        return UIImage(named: "Cake.png")!
+        return UIImage(named: "Cake.png")! //default to the Cake image
     }
 }
