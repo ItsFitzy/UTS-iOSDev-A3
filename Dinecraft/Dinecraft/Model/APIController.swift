@@ -46,8 +46,8 @@ struct RecipeData: Codable {
     let label: String
     let image: URL //URL to download the source image
     let url: URL //URL to the original recipe's page - swiping right will open the recipe in Safari
-    //let yield: Int
-    //let calories: Float
+    let yield: Int
+    let calories: Float
     //let totalWeight: Float
     //let ingredients: [Ingredient] = []
     //let totalNutrients: NutrientInfo
@@ -75,13 +75,18 @@ struct RecipeData: Codable {
     //let label: String
 //}
 
+struct ImageURLPair {
+    let image: UIImage
+    let url: URL
+}
+
 
 //Class
 class APIController {
     //Properties
     let debugOn = true
     
-    let recipeBufferThreshold = 3 //minimum length of the recipe buffer before more recipes are added
+    let recipeBufferThreshold = 4 //minimum length of the recipe buffer before more recipes are added
     
     let entryURL = "https://api.edamam.com/search"
     let appID = "595649de"
@@ -90,7 +95,9 @@ class APIController {
     
     //Variables
     var recipeBuffer: [RecipeData] = []
-    var images: [UIImage] = []
+    var images: [ImageURLPair] = []
+    
+    var imageDownloadCounter = 0
     
     
     //References
@@ -143,6 +150,7 @@ class APIController {
     
     
     //Methods
+        //FillBuffer() overflows
     func FillBuffer(){
         FillBuffer(keyword: Keywords.GetRandomKeyword())
     }
@@ -184,8 +192,14 @@ class APIController {
         }
     }
     
+        //Misc.
+    func PushToImages(image: UIImage, url: URL){
+        images.append(ImageURLPair(image: image, url: url))
+    }
+    
     
     //Functions
+        //API/API Helpers
     func Parse(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode(Response.self, from: jsonData)
@@ -228,8 +242,7 @@ class APIController {
     
     func DownloadImage(from url: URL) {
         if debugOn {
-//            print("Download Started: ", url)
-            print("Download Started")
+            print("Download Started: ", url)
         }
         
         GetImageData(from: url) { data, response, error in
@@ -237,18 +250,28 @@ class APIController {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             
             if self.debugOn {
-//                print("Download Finished: ", url)
-                print("Download Finished")
+                print("Download Finished: ", url)
             }
             
             // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
-                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
+//                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
+                self?.PushToImages(image: UIImage(data: data) ?? UIImage(named: "Cake.png")!, url: url)
             }
         }
     }
     
     func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+        //Misc
+    func PopImage(url: URL) -> UIImage{
+        for i in 0..<images.count {
+            if images[i].url == url {
+                return images.remove(at: i).image
+            }
+        }
+        return UIImage(named: "Cake.png")!
     }
 }
