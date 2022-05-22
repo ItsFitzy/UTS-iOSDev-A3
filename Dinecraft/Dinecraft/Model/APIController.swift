@@ -151,7 +151,11 @@ class APIController {
         FillBuffer(keyword: keyword, allergies: [], diets: [])
     }
     
-    func FillBuffer(keyword: String, allergies: [String], diets: [String]){
+    func FillBuffer(allergies: [String], diets: [String]){
+        FillBuffer(keyword: Keywords.GetRandomKeyword(), allergies: allergies, diets: diets)     
+    }
+    
+    func FillBuffer(keyword: String, allergies: [String], diets: [String]){        
         var url = entryURL +  "?q=" + keyword + "&app_id=" + appID + "&app_key=" + appKey
         
         for i in 0..<allergies.count { //for each of the allergies passed in
@@ -224,7 +228,8 @@ class APIController {
     
     func DownloadImage(from url: URL) {
         if debugOn {
-            print("Download Started: ", url)
+//            print("Download Started: ", url)
+            print("Download Started")
         }
         
         GetImageData(from: url) { data, response, error in
@@ -232,7 +237,8 @@ class APIController {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             
             if self.debugOn {
-                print("Download Finished: ", url)
+//                print("Download Finished: ", url)
+                print("Download Finished")
             }
             
             // always update the UI from the main thread
