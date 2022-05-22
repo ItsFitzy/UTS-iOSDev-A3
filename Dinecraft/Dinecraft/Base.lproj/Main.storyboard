@@ -86,11 +86,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-gh-D7l">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="1650"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-gh-D7l">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3b-o9-BMO">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Dd-PC-wZi">
                                                 <rect key="frame" x="295" y="156" width="49" height="31"/>
@@ -467,7 +467,6 @@
                                             <constraint firstAttribute="bottom" secondItem="vI6-G9-b1H" secondAttribute="bottom" constant="76" id="fhP-cg-owo"/>
                                             <constraint firstItem="vI6-G9-b1H" firstAttribute="top" secondItem="CVa-eJ-FDE" secondAttribute="bottom" constant="1322" id="j1F-La-iYl"/>
                                             <constraint firstItem="CVa-eJ-FDE" firstAttribute="top" secondItem="y3b-o9-BMO" secondAttribute="top" constant="36" id="oJJ-oS-WON"/>
-                                            <constraint firstAttribute="bottom" secondItem="vI6-G9-b1H" secondAttribute="bottom" constant="-24" id="tXX-W1-MRx"/>
                                             <constraint firstItem="vI6-G9-b1H" firstAttribute="leading" secondItem="y3b-o9-BMO" secondAttribute="leading" constant="313" id="upJ-vU-2e5"/>
                                         </constraints>
                                     </view>
@@ -478,7 +477,6 @@
                                     <constraint firstItem="y3b-o9-BMO" firstAttribute="height" secondItem="B4W-gh-D7l" secondAttribute="height" multiplier="0.964844" priority="250" id="IAv-Sr-7s2"/>
                                     <constraint firstItem="y3b-o9-BMO" firstAttribute="leading" secondItem="B4W-gh-D7l" secondAttribute="leading" id="YhH-SJ-lkp"/>
                                     <constraint firstAttribute="trailing" secondItem="y3b-o9-BMO" secondAttribute="trailing" id="bJm-sv-coU"/>
-                                    <constraint firstItem="y3b-o9-BMO" firstAttribute="width" secondItem="B4W-gh-D7l" secondAttribute="width" id="cR5-Wt-dKi"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="qAR-5w-SjZ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="98q-sD-sJD"/>
