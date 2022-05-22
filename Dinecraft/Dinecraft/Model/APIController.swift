@@ -75,6 +75,11 @@ struct RecipeData: Codable {
     //let label: String
 //}
 
+struct ImageURLPair {
+    let image: UIImage
+    let url: URL
+}
+
 
 //Class
 class APIController {
@@ -90,7 +95,7 @@ class APIController {
     
     //Variables
     var recipeBuffer: [RecipeData] = []
-    var images: [UIImage] = []
+    var images: [ImageURLPair] = []
     
     var imageDownloadCounter = 0
     
@@ -145,6 +150,7 @@ class APIController {
     
     
     //Methods
+        //FillBuffer() overflows
     func FillBuffer(){
         FillBuffer(keyword: Keywords.GetRandomKeyword())
     }
@@ -186,8 +192,14 @@ class APIController {
         }
     }
     
+        //Misc.
+    func PushToImages(image: UIImage, url: URL){
+        images.append(ImageURLPair(image: image, url: url))
+    }
+    
     
     //Functions
+        //API/API Helpers
     func Parse(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode(Response.self, from: jsonData)
@@ -243,12 +255,23 @@ class APIController {
             
             // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
-                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
+//                self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
+                self?.PushToImages(image: UIImage(data: data) ?? UIImage(named: "Cake.png")!, url: url)
             }
         }
     }
     
     func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+        //Misc
+    func PopImage(url: URL) -> UIImage{
+        for i in 0..<images.count {
+            if images[i].url == url {
+                return images.remove(at: i).image
+            }
+        }
+        return UIImage(named: "Cake.png")!
     }
 }

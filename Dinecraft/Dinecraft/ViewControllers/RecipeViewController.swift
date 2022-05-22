@@ -85,7 +85,7 @@ class RecipeViewController: UIViewController {
     
     func CheckBufferThreshold(){
         if apiController.images.count < apiController.recipeBufferThreshold && initialRecipeShown && initialLoadingTime < 0{
-            LoadRecipes()
+//            LoadRecipes()
         }
     }
     
@@ -96,7 +96,7 @@ class RecipeViewController: UIViewController {
                 LoadRecipes()
             }
         } else if apiController.images.count > bufferCountLastUpdate {
-            buffering = false //we know our buffering period is done when the length of the buffer increases
+//            buffering = false //we know our buffering period is done when the length of the buffer increases
         } else {
             //if we need to do something when the recipe buffer has decreased in length
         }
@@ -121,13 +121,18 @@ class RecipeViewController: UIViewController {
     }
     
     func ShowNextRecipe() {
-        if apiController.images.count == 0 { return }
+        if apiController.recipeBuffer.count > 0 && apiController.images.count > 0 {
+            let currentRecipe = apiController.recipeBuffer.removeFirst()
+            recipeImage.image = apiController.PopImage(url: currentRecipe.image)
+            recipeTitle.text = currentRecipe.label
+            recipeYield.text = String(currentRecipe.yield) + " servings"
+            recipeCalories.text = String(currentRecipe.calories) + "kJ"
+        }
         
-        recipeImage.image = apiController.images.removeFirst()
-        let currentRecipe = apiController.recipeBuffer.removeFirst()
-        recipeTitle.text = currentRecipe.label
-        recipeYield.text = String(currentRecipe.yield) + " servings"
-        recipeCalories.text = String(currentRecipe.calories) + "kJ"
+        if apiController.recipeBuffer.count < apiController.recipeBufferThreshold {
+            buffering = false
+            LoadRecipes()
+        }
     }
     
     
