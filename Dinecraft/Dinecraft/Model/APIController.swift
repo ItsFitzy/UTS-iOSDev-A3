@@ -46,8 +46,8 @@ struct RecipeData: Codable {
     let label: String
     let image: URL //URL to download the source image
     let url: URL //URL to the original recipe's page - swiping right will open the recipe in Safari
-    //let yield: Int
-    //let calories: Float
+    let yield: Int
+    let calories: Float
     //let totalWeight: Float
     //let ingredients: [Ingredient] = []
     //let totalNutrients: NutrientInfo

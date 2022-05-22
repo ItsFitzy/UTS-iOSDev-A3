@@ -735,23 +735,60 @@
                                     <action selector="OnMoreButton:" destination="muw-H9-yBi" eventType="touchUpInside" id="lir-LL-RLL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-sM-GDJ">
+                                <rect key="frame" x="20" y="517" width="374" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="lEN-o3-bW2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yield" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSL-np-qf7">
+                                <rect key="frame" x="20" y="657" width="38" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="gRw-s3-xmt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLM-xe-nCu">
+                                <rect key="frame" x="332" y="657" width="62" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="RWA-vE-Gk8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="go9-ug-61M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GSL-np-qf7" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" constant="20" id="347-a2-fkD"/>
+                            <constraint firstItem="go9-ug-61M" firstAttribute="trailing" secondItem="KLM-xe-nCu" secondAttribute="trailing" constant="20" id="640-uU-nak"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="trailing" secondItem="go9-ug-61M" secondAttribute="trailing" id="9tg-bg-x7n"/>
                             <constraint firstItem="go9-ug-61M" firstAttribute="trailing" secondItem="8qy-cT-kW9" secondAttribute="trailing" constant="20" id="DkV-GZ-pwc"/>
+                            <constraint firstItem="KLM-xe-nCu" firstAttribute="top" secondItem="lOv-sM-GDJ" secondAttribute="bottom" constant="27" id="Egk-qy-uEW"/>
+                            <constraint firstItem="lOv-sM-GDJ" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" constant="20" id="MWt-mn-Xak"/>
+                            <constraint firstItem="go9-ug-61M" firstAttribute="trailing" secondItem="lOv-sM-GDJ" secondAttribute="trailing" constant="20" id="NIe-1w-Cgf"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" id="SoT-Q6-Rd3"/>
+                            <constraint firstItem="GSL-np-qf7" firstAttribute="top" secondItem="lOv-sM-GDJ" secondAttribute="bottom" constant="27" id="gYx-jO-wVv"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="centerX" secondItem="JM5-eY-Zat" secondAttribute="centerX" id="jIs-JU-6dn"/>
                             <constraint firstItem="G6k-ga-6t4" firstAttribute="bottom" secondItem="go9-ug-61M" secondAttribute="bottom" id="nLM-hT-bBo"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="top" secondItem="go9-ug-61M" secondAttribute="top" id="pgx-T5-S07"/>
                             <constraint firstItem="8qy-cT-kW9" firstAttribute="bottom" secondItem="go9-ug-61M" secondAttribute="bottom" id="scT-Pe-Olc"/>
                             <constraint firstItem="G6k-ga-6t4" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" constant="20" id="tiu-eG-Qb2"/>
+                            <constraint firstItem="lOv-sM-GDJ" firstAttribute="top" secondItem="pGY-1t-wED" secondAttribute="bottom" constant="15" id="waV-H3-0Nw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Loading..." id="z8U-DJ-Sxc"/>
                     <connections>
+                        <outlet property="recipeCalories" destination="KLM-xe-nCu" id="9W2-aF-lfg"/>
                         <outlet property="recipeImage" destination="pGY-1t-wED" id="9pW-f2-uOg"/>
+                        <outlet property="recipeTitle" destination="lOv-sM-GDJ" id="S03-eY-AEy"/>
+                        <outlet property="recipeYield" destination="GSL-np-qf7" id="xx2-ur-f7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ5-4s-K2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

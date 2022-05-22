@@ -36,6 +36,9 @@ class RecipeViewController: UIViewController {
         //UI References
     @IBOutlet weak var recipeImage: UIImageView!
 
+    @IBOutlet weak var recipeTitle: UILabel!
+    @IBOutlet weak var recipeYield: UILabel!
+    @IBOutlet weak var recipeCalories: UILabel!
     
         //Object references
     let apiController = APIController()
@@ -54,7 +57,7 @@ class RecipeViewController: UIViewController {
     
         //UI-called
     @IBAction func OnNextButton(_ sender: Any) {
-        print("Ew! Next!")
+        ShowNextRecipe()
     }
     
     @IBAction func OnMoreButton(_ sender: Any) {
@@ -118,8 +121,13 @@ class RecipeViewController: UIViewController {
     }
     
     func ShowNextRecipe() {
+        if apiController.images.count == 0 { return }
+        
         recipeImage.image = apiController.images.removeFirst()
         let currentRecipe = apiController.recipeBuffer.removeFirst()
+        recipeTitle.text = currentRecipe.label
+        recipeYield.text = String(currentRecipe.yield) + " servings"
+        recipeCalories.text = String(currentRecipe.calories) + "kJ"
     }
     
     
