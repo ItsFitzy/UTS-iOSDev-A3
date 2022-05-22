@@ -694,14 +694,59 @@
                                     <constraint firstAttribute="width" secondItem="pGY-1t-wED" secondAttribute="height" multiplier="1:1" id="Ol0-tR-e2u"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6k-ga-6t4">
+                                <rect key="frame" x="20" y="804" width="141" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="ppd-vB-ZVk"/>
+                                    <constraint firstAttribute="width" constant="141" id="sA4-pw-tl9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Ew! Next!">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Minecraft"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnNextButton:" destination="muw-H9-yBi" eventType="touchUpInside" id="nZ8-KI-NxZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-cT-kW9">
+                                <rect key="frame" x="253" y="804" width="141" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="eDD-0R-YMA"/>
+                                    <constraint firstAttribute="width" constant="141" id="sQG-Ud-qLa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Tell me more!">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Minecraft"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnMoreButton:" destination="muw-H9-yBi" eventType="touchUpInside" id="lir-LL-RLL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="go9-ug-61M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="trailing" secondItem="go9-ug-61M" secondAttribute="trailing" id="9tg-bg-x7n"/>
+                            <constraint firstItem="go9-ug-61M" firstAttribute="trailing" secondItem="8qy-cT-kW9" secondAttribute="trailing" constant="20" id="DkV-GZ-pwc"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" id="SoT-Q6-Rd3"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="centerX" secondItem="JM5-eY-Zat" secondAttribute="centerX" id="jIs-JU-6dn"/>
+                            <constraint firstItem="G6k-ga-6t4" firstAttribute="bottom" secondItem="go9-ug-61M" secondAttribute="bottom" id="nLM-hT-bBo"/>
                             <constraint firstItem="pGY-1t-wED" firstAttribute="top" secondItem="go9-ug-61M" secondAttribute="top" id="pgx-T5-S07"/>
+                            <constraint firstItem="8qy-cT-kW9" firstAttribute="bottom" secondItem="go9-ug-61M" secondAttribute="bottom" id="scT-Pe-Olc"/>
+                            <constraint firstItem="G6k-ga-6t4" firstAttribute="leading" secondItem="go9-ug-61M" secondAttribute="leading" constant="20" id="tiu-eG-Qb2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Loading..." id="z8U-DJ-Sxc"/>
@@ -711,7 +756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ5-4s-K2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3138" y="133"/>
+            <point key="canvasLocation" x="3137.68115942029" y="132.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85b-hm-ho7">

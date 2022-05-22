@@ -50,6 +50,15 @@ class RecipeViewController: UIViewController {
         var _ = Timer.scheduledTimer(timeInterval: Double(deltaTime), target: self, selector: #selector(RecipeViewController.Update), userInfo: nil, repeats: true)
     }
     
+        //UI-called
+    @IBAction func OnNextButton(_ sender: Any) {
+        print("Ew! Next!")
+    }
+    
+    @IBAction func OnMoreButton(_ sender: Any) {
+        print("Tell me more!")
+    }
+    
         //Update methods (called every deltaTime seconds)
     @objc func Update(){
         timeSinceLoad += deltaTime
@@ -69,7 +78,7 @@ class RecipeViewController: UIViewController {
     }
     
     func CheckBufferThreshold(){
-        if apiController.images.count <= apiController.recipeBufferThreshold {
+        if apiController.images.count < apiController.recipeBufferThreshold {
             LoadRecipes()
         }
     }

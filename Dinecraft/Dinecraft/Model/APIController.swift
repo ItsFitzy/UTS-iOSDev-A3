@@ -81,7 +81,7 @@ class APIController {
     //Properties
     let debugOn = true
     
-    let recipeBufferThreshold = 3 //minimum length of the recipe buffer before more recipes are added
+    let recipeBufferThreshold = 4 //minimum length of the recipe buffer before more recipes are added
     
     let entryURL = "https://api.edamam.com/search"
     let appID = "595649de"
@@ -91,6 +91,8 @@ class APIController {
     //Variables
     var recipeBuffer: [RecipeData] = []
     var images: [UIImage] = []
+    
+    var imageDownloadCounter = 0
     
     
     //References
@@ -229,7 +231,8 @@ class APIController {
     func DownloadImage(from url: URL) {
         if debugOn {
 //            print("Download Started: ", url)
-            print("Download Started")
+            let imageNumber = GetImageNumber()
+//            print("Download Started: #", imageNumber)
         }
         
         GetImageData(from: url) { data, response, error in
@@ -238,7 +241,7 @@ class APIController {
             
             if self.debugOn {
 //                print("Download Finished: ", url)
-                print("Download Finished")
+//                print("Download Finished: #", imageNumber)
             }
             
             // always update the UI from the main thread
@@ -250,5 +253,10 @@ class APIController {
     
     func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func GetImageNumber() -> Int {
+        imageDownloadCounter += 1
+        return imageDownloadCounter
     }
 }
