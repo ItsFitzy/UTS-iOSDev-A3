@@ -81,6 +81,8 @@ class APIController {
     //Properties
     let debugOn = true
     
+    let recipeBufferThreshold = 3 //minimum length of the recipe buffer before more recipes are added
+    
     let entryURL = "https://api.edamam.com/search"
     let appID = "595649de"
     let appKey = "9d8f0ce9cfd505bf884f5f7c0d779387"
@@ -183,12 +185,8 @@ class APIController {
     func Parse(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode(Response.self, from: jsonData)
-            if debugOn {
-                print("q: ", decodedData.q)
-                print("Label 1: ", decodedData.hits[0].recipe.label)
-            }
             
-            for i in 0..<decodedData.hits.count {
+            for i in 0..<min(decodedData.hits.count, recipeBufferThreshold) {
                 recipeBuffer.append(decodedData.hits[i].recipe) //yes, I know you can append a whole array to another one, but this is neater for use in other places
             }
             
@@ -224,20 +222,27 @@ class APIController {
         return output
     }
     
-    func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
     func DownloadImage(from url: URL) {
-        print("Download Started: ", url)
+        if debugOn {
+            print("Download Started: ", url)
+        }
+        
         GetImageData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished: ", url)
+            
+            if self.debugOn {
+                print("Download Finished: ", url)
+            }
+            
             // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
                 self?.images.append((UIImage(data: data) ?? UIImage(named: "Cake.png"))!)
             }
         }
+    }
+    
+    func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 }

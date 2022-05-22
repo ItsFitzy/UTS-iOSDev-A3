@@ -11,15 +11,16 @@ import UIKit
 
 class RecipeViewController: UIViewController {
     //Properties
-    var allergiesData: [Bool] = []
-    var dietsData: [Bool] = []
     let debugOn = true
     let deltaTime = 0.2 //time in seconds between the update method being called
-    let recipeBufferMinimum = 5 //minimum length of the recipe buffer before more recipes are added
     
     
     //Variables
+    var allergiesData: [Bool] = []
+    var dietsData: [Bool] = []
+    
     var initialRecipeShown = false
+    var fillBufferQueued = true
     
     
     //References
@@ -40,6 +41,11 @@ class RecipeViewController: UIViewController {
         apiController.viewController = self
         LoadRecipes()
         
+        print("Allergies length: ", allergiesData.count)
+        print("Diets length: ", dietsData.count)
+        print("Allergies API length: ", apiController.allergiesLibrary.count)
+        print("Diets API length: ", apiController.dietsLibrary.count)
+        
         var _ = Timer.scheduledTimer(timeInterval: deltaTime, target: self, selector: #selector(RecipeViewController.LoadRecipes), userInfo: nil, repeats: true)
     }
     
@@ -47,17 +53,20 @@ class RecipeViewController: UIViewController {
         //Custom
     @objc func LoadRecipes(){
         if initialRecipeShown == false {
+            if fillBufferQueued == true{
+                apiController.FillBuffer() // this needs to be edited with the allergies and diets
+                fillBufferQueued = false
+            }
+            
             if apiController.images.count >= 1 {
                 OnFirstRecipe()
                 ShowNextRecipe()
             }
         }
         
-        if apiController.recipeBuffer.count > recipeBufferMinimum {
+        if apiController.recipeBuffer.count > apiController.recipeBufferThreshold {
             return
         }
-        
-        apiController.FillBuffer() // this needs to be edited with the allergies and diets
     }
     
     func OnFirstRecipe() {

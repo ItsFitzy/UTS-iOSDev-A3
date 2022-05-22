@@ -9,9 +9,10 @@ import UIKit
 
 class DietViewController: UIViewController {
     @IBOutlet var LblGrp: [UILabel]!
-    
     @IBOutlet var SwitchGrp: [UISwitch]!
+    
     var allergiesData: [Bool] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +35,7 @@ class DietViewController: UIViewController {
             }), completion: nil)
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToRecipe" {
             let VC = segue.destination as! RecipeViewController
