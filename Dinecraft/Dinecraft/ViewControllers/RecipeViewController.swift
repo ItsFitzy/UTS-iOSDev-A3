@@ -22,6 +22,8 @@ class RecipeViewController: UIViewController {
     var allergiesData: [Bool] = []
     var dietsData: [Bool] = []
     
+    var currentRecipeURL: URL?
+    
     var initialRecipeShown = false
     var fillBufferQueued = true
     var buffering = false
@@ -61,7 +63,7 @@ class RecipeViewController: UIViewController {
     }
     
     @IBAction func OnMoreButton(_ sender: Any) {
-        print("Tell me more!")
+        UIApplication.shared.open(currentRecipeURL!)
     }
     
         //Update methods (called every deltaTime seconds)
@@ -123,6 +125,7 @@ class RecipeViewController: UIViewController {
     func ShowNextRecipe() {
         if apiController.recipeBuffer.count > 0 && apiController.images.count > 0 {
             let currentRecipe = apiController.recipeBuffer.removeFirst()
+            currentRecipeURL = currentRecipe.url
             recipeImage.image = apiController.PopImage(url: currentRecipe.image)
             recipeTitle.text = currentRecipe.label
             recipeYield.text = String(currentRecipe.yield) + " servings"
