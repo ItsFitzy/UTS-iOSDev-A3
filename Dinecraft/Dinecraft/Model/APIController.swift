@@ -230,9 +230,7 @@ class APIController {
     
     func DownloadImage(from url: URL) {
         if debugOn {
-//            print("Download Started: ", url)
-            let imageNumber = GetImageNumber()
-//            print("Download Started: #", imageNumber)
+            print("Download Started: ", url)
         }
         
         GetImageData(from: url) { data, response, error in
@@ -240,8 +238,7 @@ class APIController {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             
             if self.debugOn {
-//                print("Download Finished: ", url)
-//                print("Download Finished: #", imageNumber)
+                print("Download Finished: ", url)
             }
             
             // always update the UI from the main thread
@@ -253,10 +250,5 @@ class APIController {
     
     func GetImageData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
-    func GetImageNumber() -> Int {
-        imageDownloadCounter += 1
-        return imageDownloadCounter
     }
 }

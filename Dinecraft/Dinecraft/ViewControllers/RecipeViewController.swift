@@ -15,6 +15,7 @@ class RecipeViewController: UIViewController {
     //Properties
     let debugOn = true
     let deltaTime: Float = 0.2 //time in seconds between the update method being called
+    var initialLoadingTime: Float = 2
     
     
     //Variables
@@ -28,6 +29,7 @@ class RecipeViewController: UIViewController {
     var timeSinceLoad: Float = 0
     
     var bufferCountLastUpdate = 0
+    var initialLoadQuota = -1
     
     
     //References
@@ -62,6 +64,7 @@ class RecipeViewController: UIViewController {
         //Update methods (called every deltaTime seconds)
     @objc func Update(){
         timeSinceLoad += deltaTime
+        initialLoadingTime -= deltaTime
         CheckForFirstLoad()
         CheckBufferThreshold()
         CheckBufferCount()
@@ -78,14 +81,14 @@ class RecipeViewController: UIViewController {
     }
     
     func CheckBufferThreshold(){
-        if apiController.images.count < apiController.recipeBufferThreshold {
+        if apiController.images.count < apiController.recipeBufferThreshold && initialRecipeShown && initialLoadingTime < 0{
             LoadRecipes()
         }
     }
     
     func CheckBufferCount(){
         if apiController.images.count == bufferCountLastUpdate {
-            if timeSinceLoad >= 5 && initialRecipeShown == false { //if we've picked a combination that doesn't give any results,
+            if timeSinceLoad >= 5 && initialRecipeShown == false && apiController.recipeBuffer.count == 0 { //if we've picked a combination that doesn't give any results,
                 buffering = false
                 LoadRecipes()
             }
